@@ -1,32 +1,63 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <v-app>
+    <div class="container">
+      <!--顶栏导航+搜索-->
+      <div class="nav">
+        <Header></Header>
+      </div>
+      <!--导航栏-->
+      <div class="navbar">
+        <Navbar></Navbar>
+      </div>
+      <!--导航栏-->
+      <!-- <div class="Main-body">
+        <div class="main">
+          <router-view></router-view>
+        </div>
+      </div> -->
+      <div class="Home">
+        <router-view></router-view>
+      </div>
     </div>
-    <router-view/>
-  </div>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import Header from "./views/Nav";
+import Navbar from "./views/Navbar";
+export default {
+  components: {
+    Header,
+    Navbar,
+  },
+};
+</script>container
+
+<style scoped>
+.container {
+  background-color: #f4f4f4;
+  min-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-#nav {
-  padding: 30px;
+/* 顶栏布局 */
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+/* 主体内容 */
+/* .Main-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+.main{
+  margin-top: 20px;
+  width: 1000px;
+  height: 800px;
+  background-color: #ffff;
+} */
 </style>
