@@ -1,65 +1,37 @@
 <template>
   <div class="data">
-    <h3>我是数据获取界面</h3>
+    <span>
+      id+姓名 :33，{{name}}
+    </span>
   </div>
-  <!-- <ul>
-    <li
-      :class="[index == status ? 'bechoice' : '']"
-      v-for="(item, index) in list"
-      :key="index"
-      @click="choice(index)"
-    >
-      {{ item.text }}
-    </li>
-  </ul> -->
 </template>
 <script>
+import axios from "axios";
 export default {
-  name: "Recharge",
   data() {
     return {
-      status: 0,
-      list: [
-        { text: "热点" },
-        { text: "政治" },
-        { text: "娱乐" },
-        { text: "新闻" },
-        { text: "军事" },
-        { text: "体育" },
-      ],
+      name: '',
     };
   },
   methods: {
-    choice(index) {
-      this.status = index;
+    getlist() {
+      axios.get("/api/orion/webflux/test/33").then(this.getlistInfo);
     },
+    getlistInfo(res) {
+      console.log("axios数据请求结果", res);
+      this.name = res.data.result.name;
+      console.log("lists数据", this.lists);
+    },
+  },
+  mounted() {
+    this.getlist();
   },
 };
 </script>
 <style lang="scss" scoped>
 .data {
-  margin-left: 50px;
-  margin-top: 20px;
-}
-ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-}
-li {
-  width: 200px;
-  height: 30px;
-  background: #eeeeee;
-  color: #000;
-  margin-right: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 5px;
-}
-.bechoice {
-  background: red;
-  color: #eeeeee;
+  margin-left: 30px;
+  margin-top: 30px;
+  font-size: 20px;
 }
 </style>

@@ -29,21 +29,21 @@
   margin-top: 30px;
 }
 .side {
-  width: 200px;
-  height: 100%;
+  width: 320px;
+  height: 138px;
   background-color: #ffff;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .side a {
   text-decoration: none;
   color: black;
-  font-size: 16px;
-  margin-top: 25px;
+  font-size: 18px;
+  margin-top: 30px;
+  margin-left: 30px;
 }
 .side a:link {
-  color: black;
+  color: #000000;
 }
 // .side a:visited {
 //   color: #125da3;
@@ -55,7 +55,7 @@
 
 .main {
   margin-left: 30px;
-  width: 800px;
+  width: 740px;
   height: 100%;
   background-color: #ffff;
 }

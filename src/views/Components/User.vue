@@ -1,9 +1,9 @@
 <template>
-  <v-row class="user">
-    <v-col cols="12">
-      <h3>张三 33</h3>
-    </v-col>
-    <v-col>
+  <div class="user">
+    <div cols="12">
+      <span>张三 33</span>
+    </div>
+    <div>
       <v-tabs v-model="tab">
         <v-tab v-for="item in items" :key="item">
           {{ item }}
@@ -26,8 +26,8 @@
           </ul>
         </v-tab-item>
       </v-tabs-items>
-    </v-col>
-  </v-row>
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -41,8 +41,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 .user {
-  margin-left: 50px;
-  margin-top: 20px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.v-tab{
+  font-size: 14px;
+}
+span{
+  font-size: 20px;
+  color: #000000;
 }
 li{
     list-style-type: none;

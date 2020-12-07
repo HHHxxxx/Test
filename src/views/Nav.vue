@@ -6,12 +6,24 @@
       <a href="">会员登录</a>
     </div>
     <div class="search">
-      <button><i class="iconfont icon-search"></i></button>
-      <input type="text" name="" id="" placeholder="请输入关键字搜索" />
+      <div>
+        <Sub></Sub>
+      </div>
+      <div>
+        <input type="text" name="" id="" placeholder="请输入关键字搜索" />
+        <button><i class="iconfont icon-search"></i></button>
+      </div>
     </div>
   </div>
 </template>
-
+<script>
+import Sub from "../views/Components/Sub.vue";
+export default {
+  components: {
+    Sub,
+  },
+};
+</script>
 <style lang="scss" scoped>
 .top {
   width: 1000px;
@@ -31,11 +43,11 @@
 /* 搜索栏 */
 .search {
   margin-top: 20px;
-  height: 50px;
+  height: 40px;
   width: 100%;
   display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .search button {
